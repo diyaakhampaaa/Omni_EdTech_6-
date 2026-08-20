@@ -1,4 +1,4 @@
-# Omni_EdTech_6
+# AccessLens-OmniKon-EdTech6
 ## Accessible Learning for Visually and Hearing Impaired Students
 
 Students with visual or hearing impairments often lack access to learning content designed for their needs. Design an inclusive solution that improves their access to quality education.
