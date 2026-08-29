@@ -128,8 +128,6 @@ AccessLens will transform existing educational content (PDFs, PPTs, videos) into
 -  **Hearing** — Captions, transcripts, visual concept cards
 -  **Universal** — Simplified explanations, concept maps, quizzes
 
-*Project is currently in the planning/design phase. Development to follow.*
-
 ---
 
 ## 👤 Author
