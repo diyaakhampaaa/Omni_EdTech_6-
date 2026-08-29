@@ -35,24 +35,6 @@ accesslens/
         └── pages/                Home, TeacherWorkflow, StudentWorkflow
 ```
 
-## Data contract
-
-Every lesson flows through one unified shape (see `backend/models/lessonSchema.js`):
-
-```
-Lesson
-├── lessonId
-├── metadata          { title, subject, referenceBook, chapter, pageRange }
-├── auditScore         { before, after, issues[] }
-├── contentPayload
-│   ├── visualMode      { structuredText, semanticAudioScript, graphExplanations[], equationExplanations[] }
-│   ├── hearingMode      { synchronizedCaptions[], transcripts, conceptCards[] }
-│   └── universalMode    { simplifiedSummary, keyTakeaways[], flashcards[], quiz[] }
-└── chatContext        { embeddings, vectorizedReferenceText, lessonContent }
-```
-
-The frontend mirrors this exactly in `frontend/src/types/lesson.js`, so the Player
-components can render `lesson.contentPayload.*` directly with no adapters.
 
 ## Processing pipeline
 
