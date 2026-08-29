@@ -79,10 +79,9 @@ components can render `lesson.contentPayload.*` directly with no adapters.
 ### Backend
 
 ```bash
-cd backend
-cp .env.example .env   # add your GEMINI_API_KEY (or OPENAI_API_KEY + AI_PROVIDER=openai)
+cd backend   
 npm install
-npm run dev             # http://localhost:5000
+npm run dev             
 ```
 
 ### Frontend
@@ -90,37 +89,13 @@ npm run dev             # http://localhost:5000
 ```bash
 cd frontend
 npm install
-npm run dev              # http://localhost:5173 (proxies /api to :5000)
+npm run dev              
 ```
-
-Open `http://localhost:5173`, use the **Teacher** flow to upload a lesson PDF/image
-and reference-book context, run the audit, then run the transformation. You'll be
-given a link to the **Student Player** for that `lessonId`.
-
-## Switching AI providers
-
-Set `AI_PROVIDER=gemini` (default) or `AI_PROVIDER=openai` in `backend/.env`.
-Both providers are called through the same `geminiService.js` interface
-(`runAccessibilityAudit`, `runContentTransformation`, `runTutorTurn`), so no
-controller code changes are needed to switch.
-
-## Production notes / next steps
-
-- Swap the in-memory `lessonStore` (Map) for Postgres/Mongo; persist `sourceFile`
-  in object storage (S3/GCS) instead of local disk.
-- Replace the placeholder `vectorizedReferenceText` with real embeddings
-  (e.g. `text-embedding-3-large` or Gemini embeddings) + a vector store for
-  chatContext, if lessons grow beyond a few pages of grounding text.
-- Add auth (teacher vs. student roles) and lesson-ownership checks.
-- Add virus scanning / stricter MIME sniffing on uploads before sending to the AI.
-- Consider streaming the transformation response for large documents.
 
 # AccessLens-OmniKon-EdTech6
 ## Accessible Learning for Visually and Hearing Impaired Students
 
 Students with visual or hearing impairments often lack access to learning content designed for their needs. Design an inclusive solution that improves their access to quality education.
-
----
 
 ##  Proposed Solution — AccessLens
 **AI Accessibility Compiler for Educational Content — One Lesson. Every Learner.**
@@ -129,8 +104,6 @@ AccessLens will transform existing educational content (PDFs, PPTs, videos) into
 -  **Visual** — TTS, structured text, graph/diagram narration
 -  **Hearing** — Captions, transcripts, visual concept cards
 -  **Universal** — Simplified explanations, concept maps, quizzes
-
----
 
 ## 👤 Author
 
@@ -142,6 +115,4 @@ IT '29
 🔗 LinkedIn: [linkedin.com/in/diya-khampa-4b9851302](https://www.linkedin.com/in/diya-khampa-4b9851302/)
 
 ---
-
-*Built for OmniKon Hackathon*
 
