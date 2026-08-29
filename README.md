@@ -5,14 +5,7 @@ AI-powered accessibility platform that converts inaccessible educational materia
 (PDFs, images, slides) into fully accessible, multi-modal learning experiences for
 visually- and hearing-impaired students.
 
-## Stack
-
-- **Frontend**: React 18 (Vite), Tailwind CSS, lucide-react, react-dropzone,
-  react-router-dom, Web Speech API (TTS)
-- **Backend**: Node.js, Express, Multer, `@google/generative-ai` (Gemini 1.5 Pro),
-  optional GPT-4o fallback via `axios`
-- **AI**: Google Gemini 1.5 Pro (native multimodal PDF/image understanding) or
-  OpenAI GPT-4o
+**[Watch the demo video](https://www.youtube.com/watch?v=LQ0Lt88dB3U)**
 
 ## Project layout
 
@@ -134,8 +127,6 @@ AccessLens will transform existing educational content (PDFs, PPTs, videos) into
 -  **Visual** — TTS, structured text, graph/diagram narration
 -  **Hearing** — Captions, transcripts, visual concept cards
 -  **Universal** — Simplified explanations, concept maps, quizzes
-
-*Project is currently in the planning/design phase. Development to follow.*
 
 ---
 
