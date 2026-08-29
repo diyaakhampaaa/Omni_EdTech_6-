@@ -49,6 +49,18 @@ app.use("/api/auth", authRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/lessons", chatRoutes);
 
+// Serve the built frontend (if present) so one server handles both the
+// API and the web app — avoids needing a separate frontend host or any
+// change to the frontend's API calls, since everything is same-origin.
+const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api")) return next(); // let API 404s stay API 404s
+    res.sendFile(path.join(frontendDistPath, "index.html"));
+  });
+}
+
 // Centralized error handler (catches Multer errors, thrown errors, etc.)
 app.use((err, _req, res, _next) => {
   console.error("Unhandled error:", err);
